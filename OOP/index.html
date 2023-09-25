@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Constructor Functions</title>
+    <script src="3_classes.js" defer></script>
+  </head>
+  <body style="background-color: rgb(212, 212, 212)">
+    <h2>YES Bank</h2>
+    <form
+      id="accountForm"
+      action=""
+      style="
+        display: flex;
+        border: 1px solid black;
+        padding: 10px;
+        flex-direction: column;
+      "
+    >
+      <input
+        style="margin: 12px; width: 200px; height: 30px"
+        type="text"
+        placeholder="Customer Name"
+        id="customerName"
+      />
+      <input
+        style="margin: 12px; width: 200px; height: 30px"
+        type="number"
+        placeholder="Initial Balance"
+        id="balance"
+      />
+      <button
+        style="width: fit-content; height: 50px; align-items: center"
+        type="submit"
+      >
+        Create Account
+      </button>
+    </form>
+    <hr />
+    <!-- Depositing  -->
+    <form
+      id="depositForm"
+      action=""
+      style="
+        display: flex;
+        border: 1px solid black;
+        padding: 10px;
+        flex-direction: column;
+      "
+    >
+      <input
+        style="margin: 12px; width: 200px; height: 30px"
+        type="number"
+        placeholder="Account number"
+        id="accountNumber"
+      />
+      <input
+        style="margin: 12px; width: 200px; height: 30px"
+        type="number"
+        placeholder="Amount "
+        id="amount"
+      />
+      <button
+        style="width: fit-content; height: 50px; align-items: center"
+        type="submit"
+      >
+        Deposit
+      </button>
+    </form>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Manipulation</title>
+    <script src="dom_manipulation.js" defer></script>
+  </head>
+  <body>
+    <!-- <div class="parent">
+      <h1 class="heading"><div class="inHeading">This is heading</div></h1>
+      <h1 id="newheading" class="newheadclass">This is new heading</h1>
+      <h1 id="oldheading">This is old heading</h1>
+    </div> -->
+
+    <div class="parent">
+      <p class="child1">children1</p>
+      <p>children2</p>
+      <p class="child3">children3</p>
+      <p class="child4">children4</p>
+    </div>
+
+    <script>
+      const parent = document.querySelector(".parent");
+      console.log(parent.childNodes);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,52 @@
+function BankAccout(customerName, balance = 0) {
+  this.customerName = customerName;
+  this.aacountNumber = Date.now();
+  this.balance = balance;
+
+  this.deposit = (amount) => {
+    this.balance += amount;
+  };
+  this.withdraw = (amount) => {
+    this.balance -= amount;
+  };
+}
+
+// const firstAccount = new BankAccout("Pratik", 500);
+// const biddenAccount = new BankAccout("Joe Bidden");
+// checking properties of object
+// console.log(biddenAccount.customerName);
+// biddenAccount.balance = 3444;
+// console.log(biddenAccount.balance);
+
+// checking methods of object
+
+// adding money through deposit method
+// firstAccount.deposit(1000);
+// console.log(firstAccount);
+
+// biddenAccount.deposit(2000);
+// console.log(biddenAccount);
+
+const accounts = [];
+const accountForm = document.querySelector("#accountForm");
+const customerName = document.querySelector("#customerName");
+const balance = document.querySelector("#balance");
+const depositForm = document.querySelector("#depositForm");
+const accountNumber = document.querySelector("#accountNumber");
+const amount = document.querySelector("#amount");
+
+accountForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const account = new BankAccout(customerName.value, +balance.value);
+  accounts.push(account);
+  console.log(accounts);
+});
+
+depositForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const account = accounts.find(
+    (account) => account.accountNumber === +accountNumber.value
+  );
+  account.deposit(+amount.value);
+  console.log(accounts);
+});
