@@ -68,7 +68,7 @@ var car = {
 
 `||`: Logical OR
 
-## `!`: Logical NOT
+`!`: Logical NOT
 
 ## Output data
 
