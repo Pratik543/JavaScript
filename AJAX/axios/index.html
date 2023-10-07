@@ -71,25 +71,30 @@
 
       // ===============================
       // this is optimised code where every post is appended to the container using loop
-      axios.get(`${API}posts/`).then((result) => {
-        console.log(result.data);
-        const heading = document.querySelector(".heading");
-        const body = document.querySelector(".post_body");
-        result.data.forEach((post) => {
-          //   heading.textContent = post.title.slice(0, 10).toUpperCase();
-          //   body.textContent = post.body.slice(0, 120);
-          //   creates a new element for every post
-          const container = document.querySelector(".grid");
-          const card = document.createElement("div");
-          container.appendChild(card);
-          card.classList.add("card");
-          card.innerHTML = `
+      axios
+        .get(`${API}posts/`)
+        .then((result) => {
+          console.log(result.data);
+          const heading = document.querySelector(".heading");
+          const body = document.querySelector(".post_body");
+          result.data.forEach((post) => {
+            //   heading.textContent = post.title.slice(0, 10).toUpperCase();
+            //   body.textContent = post.body.slice(0, 120);
+            //   creates a new element for every post
+            const container = document.querySelector(".grid");
+            const card = document.createElement("div");
+            container.appendChild(card);
+            card.classList.add("card");
+            card.innerHTML = `
           <h3>${post.id}</h3>
           <h1 class="heading">${post.title.slice(0, 10).toUpperCase()}</h1>
           <p class="post_body">${post.body.slice(0, 120)}</p>
           `;
+          });
+        })
+        .catch((err) => {
+          console.error(err);
         });
-      });
     </script>
   </body>
 </html>
