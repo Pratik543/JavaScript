@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Axios</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        max-width: 1080px;
+        margin: auto;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 20px;
+        overflow: hidden;
+      }
+
+      .card {
+        text-align: center;
+        padding: 1.5rem;
+        border: 1px solid #25250f;
+        border-radius: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Axios</h2>
+      <div class="grid">
+        <!-- Initial card structure -->
+        <!-- <div class="card">
+          <h1 class="heading">post1</h1>
+          <p class="post_body"></p>
+        </div> -->
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.5.1/axios.min.js"
+      integrity="sha512-emSwuKiMyYedRwflbZB2ghzX8Cw8fmNVgZ6yQNNXXagFzFOaQmbvQ1vmDkddHjm5AITcBIZfC7k4ShQSjgPAmQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script>
+      // JSON Placeholder fetching data
+      const API = "https://jsonplaceholder.typicode.com/";
+      // this code is bruteforced to get the data and get the idea of how to use axios
+      //   axios
+      //     // .get(`${API}posts/1`)
+      //     .then((result) => {
+      //       console.log(result);
+
+      //       // Title
+      //       const heading = document.querySelector(".heading");
+      //       heading.textContent = result.data.title.slice(0, 10).toUpperCase();
+      //       // Body
+      //       const post_body = document.querySelector(".post_body");
+      //       post_body.textContent = result.data.body.slice(0, 120);
+      //     })
+      //     .catch((err) => {
+      //       console.error(err);
+      //     });
+
+      // ===============================
+      // this is optimised code where every post is appended to the container using loop
+      axios.get(`${API}posts/`).then((result) => {
+        console.log(result.data);
+        const heading = document.querySelector(".heading");
+        const body = document.querySelector(".post_body");
+        result.data.forEach((post) => {
+          //   heading.textContent = post.title.slice(0, 10).toUpperCase();
+          //   body.textContent = post.body.slice(0, 120);
+          //   creates a new element for every post
+          const container = document.querySelector(".grid");
+          const card = document.createElement("div");
+          container.appendChild(card);
+          card.classList.add("card");
+          card.innerHTML = `
+          <h3>${post.id}</h3>
+          <h1 class="heading">${post.title.slice(0, 10).toUpperCase()}</h1>
+          <p class="post_body">${post.body.slice(0, 120)}</p>
+          `;
+        });
+      });
+    </script>
+  </body>
+</html>
