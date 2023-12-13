@@ -76,6 +76,20 @@ console.log(result2);
 
 // In JavaScript, a method is simply a function that is a property of an object. When a function is attached to an object as a property, it is known as a method of that object. When the method is called, it is executed in the context of the object it belongs to, which means the function can access and modify the object's properties. Methods can be defined on object literals or dynamically added to objects at runtime. They are an essential feature of object-oriented programming in JavaScript and are used extensively in building applications and manipulating data.
 
+// Hoisting on Functions
+
+// works fine, because regular functions are hoisted
+sumValues(10, 20);
+
+function sumValues(a, b) {
+  return a + b;
+}
+
+// throws error: divideValues is not defined, because arrow functions are not hoisted
+divideValues(10, 20);
+
+const divideValues = () => a / b;
+
 // Examples on Functions
 
 // Default Parameter

@@ -15,6 +15,8 @@ The repository is organized into various categories, covering a wide range of Ja
 - **Modules**: Explore JavaScript modules, including ES6 modules and module bundlers like webpack.
 - **Advanced Concepts**: Delve into advanced JavaScript topics such as closures, scope, hoisting, and functional programming.
 
+USE QUOKKA.JS VSCODE EXTENSION to display output in your IDE next to your code, as you type.
+
 ## Contributing
 
 This repository is not just a static resource; we encourage collaboration and contributions from the community. If you have lessons, tips, or tricks to share, feel free to contribute! Simply fork this repository, make your additions or improvements, and submit a pull request.

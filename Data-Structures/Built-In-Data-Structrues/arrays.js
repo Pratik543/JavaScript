@@ -21,34 +21,46 @@ Arrays
       - isArray() method - It determines whether a given value is an array and returns a boolean value.
 */
 
-const languages = ["JavaScript", "Python", "Java"];
+// TAKES NOTES
+// All this methods method mentioned here modify/mutates the original array directly without creating a new array
+// pop()
+// push()
+// shift()
+// unshift()
+// splice()
+// reverse()
+// sort()
+// If you want to avoid modifying the original array, you can create a copy of the array using methods like slice(), the spread operator ([...array]), or concat() before applying these methods.
+
+const languages = ['JavaScript', 'Python', 'Java'];
 
 // Length
-console.log(languages.length);
+const lengthOfLanguages = languages.length;
+console.log(lengthOfLanguages);
 
 // Calling Array with Index
 console.log(languages[2]);
 
 // Array Methods
-// [*] Adding Element at the start of an array
+// |> Adding Element at the start of an array
 // you can add new element without distutbing other elements
 // with unshift method it will add at the start
-languages.unshift("GoLang");
+languages.unshift('GoLang');
 console.log(languages);
 
-// [*] Adding Element at the end of an array
+// |> Adding Element at the end of an array
 // you can add new element after assigning it already
 // with push method it will add at the end
-languages.push("C++");
+languages.push('C++');
 console.log(languages);
 
-// [*] Removing Element at the start of an array
+// |> Removing Element at the start of an array
 // you can remove element from the start of the array
 // with shift method it will remove the first element
 console.log(languages.shift());
 console.log(languages);
 
-// [*] Removing Element at the end of an array
+// |> Removing Element at the end of an array
 // with pop method it will remove the last element
 console.log(languages.pop());
 console.log(languages);
@@ -67,17 +79,17 @@ Loops
 
 const actors = [
   {
-    name: "John",
+    name: 'John',
     age: 29,
     score: 58,
   },
   {
-    name: "Michael",
+    name: 'Michael',
     age: 23,
     score: 52,
   },
   {
-    name: "Alexandar",
+    name: 'Alexandar',
     age: 25,
     score: 65,
   },
@@ -107,28 +119,28 @@ for (const actor of actors) {
 }
 console.log(actors);
 
-// filter() method = This method creates a new array with only elements that passes the condition inside the provided function.
+// |> filter() method = This method creates a new array with only elements that passes the condition inside the provided function.
 // Checking if the marks is greater than 40
 
 const students = [
   {
-    name: "Student 1",
+    name: 'Student 1',
     marks: 35,
   },
   {
-    name: "Student 2",
+    name: 'Student 2',
     marks: 45,
   },
   {
-    name: "Student 3",
+    name: 'Student 3',
     marks: 38,
   },
   {
-    name: "Student 4",
+    name: 'Student 4',
     marks: 65,
   },
   {
-    name: "Student 5",
+    name: 'Student 5',
     marks: 40,
   },
 ];
@@ -152,24 +164,24 @@ const failed = students.filter((student) => student.marks <= 40);
 console.log(failedStudents);
 console.log(failed);
 
-// map() method = This method creates a new array with the results of calling a provided function on every element in this array.
+// |> map() method = This method creates a new array with the results of calling a provided function on every element in this array.
 
 const users = [
   {
-    name: "John",
-    surname: "Doe",
+    name: 'John',
+    surname: 'Doe',
   },
   {
-    name: "Alexander",
-    surname: "Bice",
+    name: 'Alexander',
+    surname: 'Bice',
   },
   {
-    name: "Meade",
-    surname: "Coolson",
+    name: 'Meade',
+    surname: 'Coolson',
   },
   {
-    name: "Tanny",
-    surname: "Balchin",
+    name: 'Tanny',
+    surname: 'Balchin',
   },
 ];
 
@@ -184,21 +196,21 @@ const userNames = users.map((user) => {
 
 console.log(userNames);
 
-// reduce() method = This method creates a single value by calling a provided function on every element in this array.
+// |> reduce() method = This method creates a single value by calling a provided function on every element in this array.
 
 const movies = [
   {
-    name: "Avengers",
+    name: 'Avengers',
     year: 2012,
     budget: 2_00_000,
   },
   {
-    name: "Interstellar",
+    name: 'Interstellar',
     year: 2014,
     budget: 1_50_000,
   },
   {
-    name: "Titanic",
+    name: 'Titanic',
     year: 1997,
     budget: 1_00_000,
   },
@@ -220,7 +232,7 @@ const total = movies.reduce((acc, movie) => {
 
 console.log(total);
 
-// indexOf() method = This method returns the index of the first occurrence of a specified value in an array.
+// |> indexOf() method = This method returns the index of the first occurrence of a specified value in an array.
 
 const admins = [2, 3, 8, 9, 10];
 
@@ -228,15 +240,15 @@ console.log(admins.indexOf(10));
 
 const all_users = [
   {
-    name: "John",
+    name: 'John',
     id: 1,
   },
   {
-    name: "Alexander",
+    name: 'Alexander',
     id: 2,
   },
   {
-    name: "Meade",
+    name: 'Meade',
     id: 3,
   },
 ];
@@ -250,68 +262,96 @@ console.log(admins.indexOf(2)); //index of 2 in admins array
 
 console.log(isAdmin);
 
-// lastIndexOf() method = This method returns the index of the last occurrence of a specified value in an array.
+// =>lastIndexOf() method = This method returns the index of the last occurrence of a specified value in an array.
 
 console.log(admins.lastIndexOf(all_users[2].id));
 
-// includes() method = This method determines whether an array includes a specified value.
+// |> includes() method = This method determines whether an array includes a specified value.
 // better way than indexOf
 
 console.log(admins.includes(all_users[2].id));
 console.log(admins.includes(all_users[0].id));
 
-//find () method = This method finds a specified value in an array.
+// |> find () method = This method finds a specified value in an array.
 
 // const findUser = all_users.find((user) => {
 //   return user.id === 2;
 // });
 
 const findUser = all_users.find((user) => {
-  return user.name === "Meade";
+  return user.name === 'Meade';
 });
 
-//findIndex() method = This method finds a specified value in an array.
+// |> findIndex() method = This method finds a specified value in an array.
 const findUserName = all_users.findIndex((user) => {
-  return user.name === "Meade";
+  return user.name === 'Meade';
 });
 
 console.log(findUserName);
 
-// sort() method = This method sorts an array in ascending order.
+//|> sort() method = This method sorts an array in ascending order.
 
 const names = [
-  "Rudd,",
-  "Lavinie",
-  "Halsy",
-  "Avram",
-  "Pepe",
-  "Jerri",
-  "Sampson",
-  "Corrianne",
-  "Cristal",
+  'Rudd,',
+  'Lavinie',
+  'Halsy',
+  'Avram',
+  'Pepe',
+  'Jerri',
+  'Sampson',
+  'Corrianne',
+  'Cristal',
 ];
 
 // const sortedNames = names.sort();
 // console.log(sortedNames);
 
-// reverse() method = This method reverses an array in descending order.
+// |> reverse() method = This method reverses an array in descending order.
 
 // const reversedNames = names.reverse();
 // console.log(reversedNames);
+// the reverse() method in JavaScript mutates the original array. It reverses the order of the elements in the array in place, meaning it modifies the original array directly without creating a new array. After calling reverse(), the original array will be reversed.
 
-// splice() method = This method adds or removes elements from an array and returns the removed elements.
+// |> splice() method = This method adds or removes elements from an array and returns the removed elements.
 
 const deletedNames = names.splice(2, 3); //from index 2 remove 3 elements
 console.log(deletedNames);
 console.log(names);
 
-// slice() method = This method extracts a section of an array and returns a new array.
+// |> slice() method = This method extracts a section of an array and returns a new array.
 
-const namearr = ["Pratik", "Raja", "Mrunal", "Rahul"];
-const sentence = "HELLO";
+const namearr = ['Pratik', 'Raja', 'Mrunal', 'Rahul'];
+const sentence = 'HELLO';
 
 const half = namearr.slice(1);
 const cut = sentence.slice(1);
 // const cut = sentence.slice(2);
 console.log(half);
 console.log(cut);
+
+// |> join() method = This method joins all elements of an array into a string.
+
+const arr = ['Pratik', 'Raja', 'Mrunal', 'Rahul'];
+const joined = arr.join(' and '); // returns a string with the argument given the join method between the element of the array
+console.log(joined);
+
+// |> toString() method = This method converts an array into a string.
+
+const arr1 = ['mango', 'apple', 'pineapple', 'grapes', 'banana'];
+const str = arr1.toString();
+console.log(str);
+
+// |> isArray() method = This method determines whether a given value is an array and returns a boolean value.
+
+const arr2 = ['mango', 'apple', 'pineapple', 'grapes', 'banana'];
+const arr3 = ['mango', 'apple', 'pineapple', 'grapes', 'banana'];
+
+console.log(Array.isArray(arr2));
+
+// ========================================================
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+const reverseNumbers = numbers.reverse();
+
+console.log(reverseNumbers);
+console.log(numbers);
+// as you can see the original array is mutated
