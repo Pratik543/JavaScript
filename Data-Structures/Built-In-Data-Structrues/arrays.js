@@ -32,7 +32,7 @@ Arrays
 // sort()
 // If you want to avoid modifying the original array, you can create a copy of the array using methods like slice(), the spread operator ([...array]), or concat() before applying these methods.
 
-const languages = ['JavaScript', 'Python', 'Java'];
+const languages = ["JavaScript", "Python", "Java"];
 
 // Length
 const lengthOfLanguages = languages.length;
@@ -45,13 +45,13 @@ console.log(languages[2]);
 // |> Adding Element at the start of an array
 // you can add new element without distutbing other elements
 // with unshift method it will add at the start
-languages.unshift('GoLang');
+languages.unshift("GoLang");
 console.log(languages);
 
 // |> Adding Element at the end of an array
 // you can add new element after assigning it already
 // with push method it will add at the end
-languages.push('C++');
+languages.push("C++");
 console.log(languages);
 
 // |> Removing Element at the start of an array
@@ -79,17 +79,17 @@ Loops
 
 const actors = [
   {
-    name: 'John',
+    name: "John",
     age: 29,
     score: 58,
   },
   {
-    name: 'Michael',
+    name: "Michael",
     age: 23,
     score: 52,
   },
   {
-    name: 'Alexandar',
+    name: "Alexandar",
     age: 25,
     score: 65,
   },
@@ -124,23 +124,23 @@ console.log(actors);
 
 const students = [
   {
-    name: 'Student 1',
+    name: "Student 1",
     marks: 35,
   },
   {
-    name: 'Student 2',
+    name: "Student 2",
     marks: 45,
   },
   {
-    name: 'Student 3',
+    name: "Student 3",
     marks: 38,
   },
   {
-    name: 'Student 4',
+    name: "Student 4",
     marks: 65,
   },
   {
-    name: 'Student 5',
+    name: "Student 5",
     marks: 40,
   },
 ];
@@ -168,20 +168,20 @@ console.log(failed);
 
 const users = [
   {
-    name: 'John',
-    surname: 'Doe',
+    name: "John",
+    surname: "Doe",
   },
   {
-    name: 'Alexander',
-    surname: 'Bice',
+    name: "Alexander",
+    surname: "Bice",
   },
   {
-    name: 'Meade',
-    surname: 'Coolson',
+    name: "Meade",
+    surname: "Coolson",
   },
   {
-    name: 'Tanny',
-    surname: 'Balchin',
+    name: "Tanny",
+    surname: "Balchin",
   },
 ];
 
@@ -190,6 +190,7 @@ const userNames = users.map((user) => {
     fullname: `${user.name} ${user.surname}`,
   };
 
+  // return `fullname: ${user.name} ${user.surname}`,
   // return user.name + user.surname;
   // return user.name + ' ' + user.surname;
 });
@@ -200,17 +201,17 @@ console.log(userNames);
 
 const movies = [
   {
-    name: 'Avengers',
+    name: "Avengers",
     year: 2012,
     budget: 2_00_000,
   },
   {
-    name: 'Interstellar',
+    name: "Interstellar",
     year: 2014,
     budget: 1_50_000,
   },
   {
-    name: 'Titanic',
+    name: "Titanic",
     year: 1997,
     budget: 1_00_000,
   },
@@ -240,15 +241,15 @@ console.log(admins.indexOf(10));
 
 const all_users = [
   {
-    name: 'John',
+    name: "John",
     id: 1,
   },
   {
-    name: 'Alexander',
+    name: "Alexander",
     id: 2,
   },
   {
-    name: 'Meade',
+    name: "Meade",
     id: 3,
   },
 ];
@@ -279,12 +280,12 @@ console.log(admins.includes(all_users[0].id));
 // });
 
 const findUser = all_users.find((user) => {
-  return user.name === 'Meade';
+  return user.name === "Meade";
 });
 
 // |> findIndex() method = This method finds a specified value in an array.
 const findUserName = all_users.findIndex((user) => {
-  return user.name === 'Meade';
+  return user.name === "Meade";
 });
 
 console.log(findUserName);
@@ -292,15 +293,15 @@ console.log(findUserName);
 //|> sort() method = This method sorts an array in ascending order.
 
 const names = [
-  'Rudd,',
-  'Lavinie',
-  'Halsy',
-  'Avram',
-  'Pepe',
-  'Jerri',
-  'Sampson',
-  'Corrianne',
-  'Cristal',
+  "Rudd,",
+  "Lavinie",
+  "Halsy",
+  "Avram",
+  "Pepe",
+  "Jerri",
+  "Sampson",
+  "Corrianne",
+  "Cristal",
 ];
 
 // const sortedNames = names.sort();
@@ -320,8 +321,8 @@ console.log(names);
 
 // |> slice() method = This method extracts a section of an array and returns a new array.
 
-const namearr = ['Pratik', 'Raja', 'Mrunal', 'Rahul'];
-const sentence = 'HELLO';
+const namearr = ["Pratik", "Raja", "Mrunal", "Rahul"];
+const sentence = "HELLO";
 
 const half = namearr.slice(1);
 const cut = sentence.slice(1);
@@ -331,20 +332,20 @@ console.log(cut);
 
 // |> join() method = This method joins all elements of an array into a string.
 
-const arr = ['Pratik', 'Raja', 'Mrunal', 'Rahul'];
-const joined = arr.join(' and '); // returns a string with the argument given the join method between the element of the array
+const arr = ["Pratik", "Raja", "Mrunal", "Rahul"];
+const joined = arr.join(" and "); // returns a string with the argument given the join method between the element of the array
 console.log(joined);
 
 // |> toString() method = This method converts an array into a string.
 
-const arr1 = ['mango', 'apple', 'pineapple', 'grapes', 'banana'];
+const arr1 = ["mango", "apple", "pineapple", "grapes", "banana"];
 const str = arr1.toString();
 console.log(str);
 
 // |> isArray() method = This method determines whether a given value is an array and returns a boolean value.
 
-const arr2 = ['mango', 'apple', 'pineapple', 'grapes', 'banana'];
-const arr3 = ['mango', 'apple', 'pineapple', 'grapes', 'banana'];
+const arr2 = ["mango", "apple", "pineapple", "grapes", "banana"];
+const arr3 = ["mango", "apple", "pineapple", "grapes", "banana"];
 
 console.log(Array.isArray(arr2));
 
