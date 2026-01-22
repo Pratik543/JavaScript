@@ -1,6 +1,8 @@
 # Arrays of Objects in JS
 
-     - Object is a collection of related properties and methods that represent a single entity. It is a core data structure that can be used to model real-world entities and interactions between them.<br> Objects can be created using literal notation or object constructors.
+     - Object is a collection of related properties and methods that represent a single entity. It is a core data structure that can be used to model real-world entities and interactions between them.
+
+     - Objects can be created using literal notation or object constructors.
 
      - Array is a type of data structure that is used to store a collection of values. These values can be of any data type, including strings, numbers, booleans, or even other arrays.
 
@@ -163,6 +165,9 @@ In this example, `people` is an array that contains three objects, each with dif
     const numbers = [1, 3, 5];
     const hasEven = numbers.some((num) => num % 2 === 0);
     console.log(hasEven); // Output: false
+    
+    let isGreaterThan3 = numbers.some((e) => e > 3);
+    console.log(isGreaterThan3) //Output: true
     ```
 
 8.  `includes()`
@@ -204,9 +209,14 @@ In this example, `people` is an array that contains three objects, each with dif
     ```js
     const numbers = [1, 2, 3, 4, 5];
     const sum = numbers.reduce(
-      (accumulator, currentValue) => accumulator + currentValue
+      (accumulator, currentValue) => return accumulator + currentValue
     );
     console.log(sum); // Output: 15
+
+    const sumWith10 = numbers.reduce((acc,cur)=>{
+      return acc + cur;
+    },10)
+    console.log(sumWith10) //Output:25 Because reduce also accepts a initial value which is already stored in acc variable 
     ```
 
 11. `find()`
@@ -221,6 +231,31 @@ In this example, `people` is an array that contains three objects, each with dif
     const numbers = [1, 2, 3, 4, 5];
     const evenNumber = numbers.find((num) => num % 2 === 0);
     console.log(evenNumber); // Output: 2
+
+    const posts = [
+      {
+        id: 1,
+        title: "Hello World",
+        body: "This is my first post",
+        author: "Dane",
+      },
+      {
+        id: 2,
+        title: "Hello World",
+        body: "This is my second post",
+        author: "Dane",
+      },
+      {
+        id: 3,
+        title: "Hello World",
+        body: "This is my third post",
+        author: "John",
+      },
+    ];
+    
+    let postAuthor = posts.find((e) => e.author === "Dane");
+    console.log(postAuthor) // Output: Returns a Array of Objects where author is Dane In this case it returns 2 objects in an array.
+
     ```
 
 12. `findIndex()`
@@ -380,6 +415,13 @@ In this example, `people` is an array that contains three objects, each with dif
     const fruits = ["banana", "apple", "orange", "mango"];
     fruits.sort(); // Sorts the array alphabetically
     console.log(fruits); // Output: ["apple", "banana", "mango", "orange"]
+
+    const nums = [10,9,3,4,5,6,7,8,2,1];
+    let sortedNumbers = nums.sort((a, b) => {
+      // This callback is made for correcting the order because for 2 digit numbers sort method will check on first digit
+      a - b
+    });
+    //Output: [1,2,3,4,5,6,7,8,9,10]
     ```
 
 Note that `sort()` sorts the elements of the array in place, which means it modifies the original array. If you want to avoid modifying the original array, you can create a copy of the array and sort that instead, like this:

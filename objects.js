@@ -56,7 +56,7 @@ for (let prop in person) {
   console.log(prop + ":" + person[prop]);
 }
 
-// creating object using object constructor using new keyword
+// Creating object using object constructor using new keyword
 // using object constructor there is two way to create object
 
 //----> first example
@@ -77,3 +77,5 @@ const plants = new Object({
 
 console.log(plants);
 console.log(plants["type"]);
+
+console.log(Object.fromEntries(person));
